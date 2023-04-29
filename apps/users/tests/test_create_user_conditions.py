@@ -1,7 +1,10 @@
-from django.urls import reverse
-from rest_framework import status
-from .test_base_user_view import UserViewSetTests
 from unittest import mock
+
+from django.urls import reverse
+
+from rest_framework import status
+
+from .test_base_user_view import UserViewSetTests
 
 
 class CreateUserViewSetTests(UserViewSetTests):
@@ -78,7 +81,8 @@ class CreateUserViewSetTests(UserViewSetTests):
         }
         response = self.client.post(url, data)
 
-        # Password must include lowercase and uppercase letters, digits, and symbols. At least 8 chars (or 400 BAD REQUEST).
+        # Password must include lowercase and uppercase letters, digits,
+        # and symbols. At least 8 chars (or 400 BAD REQUEST).
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     @mock.patch('apps.users.services.subscription.SubscriptionService')

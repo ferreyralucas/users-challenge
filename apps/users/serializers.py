@@ -2,12 +2,12 @@ import uuid
 
 from django.contrib.auth import password_validation
 from django.contrib.auth.models import Group
+from django.core.exceptions import ValidationError
 
 from rest_framework import serializers
 
-from .services.subscription import SubscriptionService
-from django.core.exceptions import ValidationError
 from .models import User
+from .services.subscription import SubscriptionService
 
 
 class UserModelSerializer(serializers.ModelSerializer):

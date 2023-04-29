@@ -1,4 +1,4 @@
-Steps to run the project:
+### Steps to run the project:
 
 1. Define environment files
 ```
@@ -12,7 +12,7 @@ cp config/settings/dev.local.py config/settings/dev.py
 
 3. Install pre-commit githooks:
 ```
-pre-commit install
+pre-commit && pre-commit install
 ```
 
 4. Build and run the project:
@@ -20,10 +20,19 @@ pre-commit install
 docker-compose up
 ```
 
-5. Load the local database dump:
+# That's it!
+
+
+### To load the database dump:
+
 ```
 python manage.py migrate
 python manage.py loaddata data.json
 ```
 
-That's it!
+##### Access to the Swagger interface
+
+```
+http://127.0.0.1:8000/swagger/
+http://127.0.0.1:8000/redoc/
+```

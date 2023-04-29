@@ -1,6 +1,7 @@
+import re
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-import re
 
 
 class UppercaseLowercaseNumbersSymbolsValidator:
@@ -21,4 +22,4 @@ class UppercaseLowercaseNumbersSymbolsValidator:
             raise ValidationError(_("La contraseña debe contener al menos un símbolo."))
 
     def get_help_text(self) -> str:
-        return _("La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un símbolo.")
+        return _("La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un símbolo.")

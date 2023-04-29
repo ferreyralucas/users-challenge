@@ -1,11 +1,16 @@
+from typing import Type
+
+from rest_framework import serializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-
-from .permissions import StaffPermission, UserRemovalPermission, UpdateOwnProfileOrStaff
-from .serializers import FlatUserSerializer, StaffUserModelSerializer
 from users.models import User
-from rest_framework import serializers
-from typing import Type
+
+from .permissions import (
+    StaffPermission,
+    UpdateOwnProfileOrStaff,
+    UserRemovalPermission,
+)
+from .serializers import FlatUserSerializer, StaffUserModelSerializer
 
 
 class UserViewSet(ModelViewSet):

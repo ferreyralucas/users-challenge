@@ -1,11 +1,12 @@
 import uuid
+
 from django.contrib.auth.hashers import make_password
+
 import factory
 from factory.django import DjangoModelFactory
 from faker import Faker
-
-from users.models import User
 from users.constants import SubscriptionChoices
+from users.models import User
 
 faker = Faker()
 

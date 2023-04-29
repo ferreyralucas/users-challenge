@@ -1,5 +1,7 @@
 from django.urls import reverse
+
 from rest_framework import status
+
 from .test_base_user_view import UserViewSetTests
 
 
